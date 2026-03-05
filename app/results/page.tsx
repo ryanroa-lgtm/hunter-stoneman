@@ -1,3 +1,5 @@
+import Nav from '../components/Nav';
+
 export default function ResultsPage() {
   const results = [
     { event: "Willow Creek Invitational", location: "Knoxville, TN", result: "Win – 11 rounds of 68, 65" },
@@ -11,25 +13,7 @@ export default function ResultsPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="sticky top-0 border-b border-zinc-200 bg-white/95 backdrop-blur-sm z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex-shrink-0">
-              <a href="/" className="text-2xl font-bold tracking-tight text-zinc-900">HUNTER STONEMAN</a>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="/" className="text-zinc-700 hover:text-zinc-900 font-medium">Home</a>
-              <a href="/about" className="text-zinc-700 hover:text-zinc-900 font-medium">About</a>
-              <a href="/results" className="text-zinc-900 hover:text-zinc-600 font-medium border-b-2 border-emerald-600">Results</a>
-              <a href="/bag" className="text-zinc-700 hover:text-zinc-900 font-medium">Bag</a>
-              <a href="/partners" className="text-zinc-700 hover:text-zinc-900 font-medium">Partners</a>
-              <a href="/never-birdie-boys" className="text-zinc-700 hover:text-zinc-900 font-medium">Never Birdie Boys</a>
-              <a href="/contact" className="bg-zinc-900 text-white px-6 py-2 rounded-full font-semibold hover:bg-zinc-800 transition">Contact</a>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Nav active="Results" />
 
       {/* Page Header */}
       <div className="bg-gradient-to-br from-emerald-800 to-emerald-950 text-white">
