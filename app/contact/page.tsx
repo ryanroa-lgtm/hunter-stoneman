@@ -14,7 +14,7 @@ export default function ContactPage() {
     alert('Form submitted! (This is a placeholder - connect to your email service)');
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
