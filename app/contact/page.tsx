@@ -52,7 +52,7 @@ export default function ContactPage() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent transition"
+                  className="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent transition text-zinc-900 bg-white"
                   placeholder="Your name"
                 />
               </div>
@@ -67,7 +67,7 @@ export default function ContactPage() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent transition"
+                  className="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent transition text-zinc-900 bg-white"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -82,7 +82,7 @@ export default function ContactPage() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent transition"
+                  className="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent transition text-zinc-900 bg-white"
                   placeholder="What is this regarding?"
                 />
               </div>
@@ -97,7 +97,7 @@ export default function ContactPage() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={6}
-                  className="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent transition resize-none"
+                  className="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent transition text-zinc-900 bg-white resize-none"
                   placeholder="Your message..."
                 />
               </div>
