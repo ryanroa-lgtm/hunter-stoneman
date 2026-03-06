@@ -25,7 +25,7 @@ export default function HomePage() {
       <Nav active="Home" />
 
       {/* Hero Carousel */}
-      <div className="relative h-[700px] overflow-hidden">
+      <div className="relative h-[500px] md:h-[600px] overflow-hidden">
         {images.map((img, idx) => (
           <div
             key={idx}
