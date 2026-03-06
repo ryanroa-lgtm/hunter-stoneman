@@ -36,7 +36,7 @@ export default function HomePage() {
             <img
               src={img}
               alt={`Hunter Stoneman action shot ${idx + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30" />
           </div>
