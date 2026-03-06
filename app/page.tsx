@@ -8,7 +8,7 @@ export default function HomePage() {
   
   const images = [
     { src: '/images/hunter-swing-1.jpg', position: 'object-top' },
-    { src: '/images/hunter-swing-2.jpg', position: 'object-center' },
+    { src: '/images/hunter-swing-2.jpg', position: 'object-bottom' },
     { src: '/images/hunter-swing-3.jpg', position: 'object-top' },
   ];
 
