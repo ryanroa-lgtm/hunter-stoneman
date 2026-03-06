@@ -7,9 +7,9 @@ export default function HomePage() {
   const [currentImage, setCurrentImage] = useState(0);
   
   const images = [
-    '/images/hunter-swing-1.jpg',
-    '/images/hunter-swing-2.jpg', 
-    '/images/hunter-swing-3.jpg'
+    { src: '/images/hunter-swing-1.jpg', position: 'object-top' },
+    { src: '/images/hunter-swing-2.jpg', position: 'object-center' },
+    { src: '/images/hunter-swing-3.jpg', position: 'object-top' },
   ];
 
   useEffect(() => {
@@ -34,9 +34,9 @@ export default function HomePage() {
             }`}
           >
             <img
-              src={img}
+              src={img.src}
               alt={`Hunter Stoneman action shot ${idx + 1}`}
-              className="w-full h-full object-cover object-top"
+              className={`w-full h-full object-cover ${img.position}`}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30" />
           </div>
