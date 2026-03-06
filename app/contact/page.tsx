@@ -10,9 +10,28 @@ export default function ContactPage() {
     subject: '',
     message: ''
   });
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
-  const handleSubmit = () => {
-    alert('Form submitted! (This is a placeholder - connect to your email service)');
+  const handleSubmit = async () => {
+    setStatus('sending');
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: '0fbb1dcc-7499-4803-8d01-dd5942e4ae6b',
+          ...formData,
+        }),
+      });
+      if (res.ok) {
+        setStatus('sent');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -104,14 +123,22 @@ export default function ContactPage() {
 
               <button
                 onClick={handleSubmit}
-                className="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold px-8 py-4 rounded-lg transition"
+                disabled={status === 'sending'}
+                className="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold px-8 py-4 rounded-lg transition disabled:opacity-50"
               >
-                Send Message
+                {status === 'sending' ? 'Sending...' : 'Send Message'}
               </button>
 
-              <p className="text-sm text-zinc-500 text-center">
-                Note: This form is a placeholder. Connect to an email service to make it functional.
-              </p>
+              {status === 'sent' && (
+                <p className="text-sm text-emerald-700 text-center font-medium">
+                  Message sent! Hunter will get back to you soon.
+                </p>
+              )}
+              {status === 'error' && (
+                <p className="text-sm text-red-600 text-center font-medium">
+                  Something went wrong. Please try again or email directly.
+                </p>
+              )}
             </div>
           </div>
 
